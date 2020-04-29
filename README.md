@@ -11,4 +11,6 @@ The method was proposed by Google Brain and Deep Mind team.
 
 "Debidatta Dwibedi, Yusuf Aytar, Jonathan Tompson, Pierre Sermanet, and Andrew Zisserman, Google Brain and Deep Mind, Temporal Cycle-Consistency Learning, CVPR 2019"
 
+http://openaccess.thecvf.com/content_CVPR_2019/papers/Dwibedi_Temporal_Cycle-Consistency_Learning_CVPR_2019_paper.pdf
+
 Thank you.
