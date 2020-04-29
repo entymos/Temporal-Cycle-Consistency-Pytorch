@@ -1,3 +1,5 @@
+# Input the frame-level features(embeddings) of different two videos (U and V) and video lengths
+
 U_length # U_length: (int)
 V_length # V_length: (int)
 U_seq # U_seq: (torch tensor) [seq_len, feature size dim]
@@ -12,7 +14,7 @@ def softmax_tcc(left, right, j):
     down = torch.sum(torch.stack(down_inner))
     return top / down
 
-# tcc uses l2 distance: dist_l2(a,b)=||a-b|| = torch.sqrt(torch.sum((a_i-b_i)**2)
+# TCC uses l2 distance: dist_l2(a,b)=||a-b|| = torch.sqrt(torch.sum((a_i-b_i)**2)
 for i in range(U_length):
     v_bar_list = []
     for j in range(V_length):
@@ -53,3 +55,6 @@ for i in range(U_length):
 
     ramda = 0.01 # regularization weight
     L_cbr = (i-mu)**2/sigma_pow + ramda*torch.log(torch.sqrt(sigma_pow))
+    
+    # Minimize the loss
+    loss_of_tcc = L_cbc + L_cbr    
